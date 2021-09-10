@@ -4,10 +4,10 @@ export default {
   input: 'src/index.ts',
   output: [
     {
-      dir: 'dist',
-      format: 'esm'
+      format: 'cjs',
+      file: 'dist/index.cjs'
     }
   ],
-  plugins: [ts({ include: ['./src/**/*.ts'] })],
+  plugins: [ts({ tsconfig: './tsconfig.json' })],
   external: ['crypto', '@tinyhttp/cookie', '@tinyhttp/cookie-signature']
 }

@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist",
-    "declarationDir": "dist",
-    "target": "ES2019",
-    "module": "ESNext",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "declarationDir": ".",
     "declaration": true,
+    "target": "ES2015",
+    "module": "ESNext",
     "preserveSymlinks": true,
     "isolatedModules": true,
     "esModuleInterop": true,
@@ -17,7 +17,9 @@
     "skipLibCheck": true,
     "moduleResolution": "Node",
     "forceConsistentCasingInFileNames": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "newLine": "lf",
+    "types": ["node"]
   },
   "exclude": ["tests", "examples", "dist"]
 }

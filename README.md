@@ -7,27 +7,34 @@
 
 </div>
 
+**This is a fork of my own creation, but for CommonJS. I've updated the readme so you should be on the right track while using this one.**
+
+**If your project uses ES Modules, consider using the original [Malibu library](https://github.com/tinyhttp/malibu).**
+
 This middleware helps web developers fight [CSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) attacks. Bear in mind, by solely using this middleware, we can't guarantee your app will be free from CSRF attacks. Refer to [CSRF Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html) and [pillarjs/understanding-csrf](https://github.com/pillarjs/understanding-csrf) for more details.
 
 * ⚡ Framework agnostic (works with Express, Tinyhttp, Polka, and more!)
-* ✨ Native ESM support
+* ✨ ~~Native ESM support~~ Uhh, no this one is Common JS only.
 * 🛠 Typescript typings out of the box
 * 🚀 No legacy dependencies
 
 ## Install
 
 ```
-pnpm i malibu
+pnpm i @aldy505/malibu
 ```
 
 ## Usage
 
 Like all CSRF plugins, it depends on either Cookie Parser or Session middleware.
 
+NOTE: If you are using Tinyhttp's dependencies (cookie-parser and such), don't forget to use the Common JS version.
+It's should be anything before v2. Otherwise, you're going to get an error.
+
 ```js
-import { App } from '@tinyhttp/app'
-import { cookieParser } from '@tinyhttp/cookie-parser'
-import { csrf } from 'malibu'
+const { App } = require('@tinyhttp/app')
+const { cookieParser } = require('@tinyhttp/cookie-parser')
+const { csrf } = require('malibu')
 
 const app = new App()
 
@@ -69,9 +76,9 @@ app.post('/', csrfProtection, (req, res) => {
 With [express-session](https://github.com/expressjs/session):
 
 ```js
-import { App } from '@tinyhttp/app'
-import session from 'express-session'
-import { csrf } from 'malibu'
+const { App } = require('@tinyhttp/app')
+const session = require('express-session')
+const { csrf } = require('malibu')
 
 const app = new App()
 
