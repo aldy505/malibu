@@ -34,7 +34,7 @@ It's should be anything before v2. Otherwise, you're going to get an error.
 ```js
 const { App } = require('@tinyhttp/app')
 const { cookieParser } = require('@tinyhttp/cookie-parser')
-const { csrf } = require('malibu')
+const { csrf } = require('@aldy505/malibu')
 
 const app = new App()
 
@@ -78,7 +78,7 @@ With [express-session](https://github.com/expressjs/session):
 ```js
 const { App } = require('@tinyhttp/app')
 const session = require('express-session')
-const { csrf } = require('malibu')
+const { csrf } = require('@aldy505/malibu')
 
 const app = new App()
 
